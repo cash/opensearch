@@ -1,0 +1,45 @@
+; OpenSearch configuration
+
+; ShortName
+; Contains a brief human-readable title that identifies this search engine.
+; 16 characters or less of plain text.
+; Required
+shortname = "Elgg"
+
+; Description
+; Contains a human-readable text description of the search engine.
+; 1024 characters or less of plain text.
+; Required
+description	= "Elgg search engine"
+
+; LongName
+; Contains an extended human-readable title that identifies this search engine.
+; 48 characters or less of plain text.
+;longname = ""
+
+; Image
+; Contains a URL that identifies the location of an image that can be used
+; in association with this search content. Can be either a 16x16 ico or
+; 64x64 png or both. Clients will choose the image that best fits the
+; display area. The value should be relative to your Elgg root.
+ico = "_graphics/favicon.ico"
+;png = ""
+
+; Tags
+; Contains a set of words that are used as keywords to identify and categorize
+; this search content. Tags must be a single word and are delimited by the
+; space character (' ').
+; 256 characters or less, space delimited tags
+;tags = "test search elgg"
+
+; Language
+; Contains a string that indicates that the search engine supports search
+; results in the specified language.
+; * or codes according to XML 1.0 Language Identification
+lang[] = "en-us"
+
+; Query
+; Test query available to clients.
+; Clients can submit this as a test query to ensure that the OpenSearch
+; interface works.
+;query = "test"
