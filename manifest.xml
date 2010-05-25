@@ -3,8 +3,8 @@
 	<field key="author" value="Cash Costello" />
 	<field key="version" value="1.0" />
 	<field key="description" value="OpenSearch plugin" />
-	<field key="website" value="" />
-	<field key="copyright" value="" />
+	<field key="website" value="http://cashcostello.com/blog/" />
+	<field key="copyright" value="Cash Costello 2010" />
 	<field key="licence" value="GNU Public License version 2" />
 	<field key="elgg_version" value="2010030101" />
 </plugin_manifest>

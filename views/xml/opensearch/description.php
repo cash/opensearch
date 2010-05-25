@@ -16,7 +16,7 @@ extract($config);
 $site = get_entity($CONFIG->site_guid);
 $email = $site->email;
 
-$rss_url = "{$vars['url']}pg/opensearch/?q={searchTerms}&amp;pw={startPage?}&amp;format=rss";
+$rss_url = "{$vars['url']}pg/search/?q={searchTerms}&amp;view=opensearch_rss";
 $html_url = "{$vars['url']}pg/search/?q={searchTerms}";
 
 ?>
@@ -27,8 +27,8 @@ $html_url = "{$vars['url']}pg/search/?q={searchTerms}";
    <LongName><?php echo $longname; ?></LongName>
 <?php endif; ?>
    <Contact><?php echo $site->email; ?></Contact>
-   <Url type="text/html" indexOffset="0" template="<?php echo $html_url; ?>"/>
-   <Url type="application/rss+xml" indexOffset="0" template="<?php echo $rss_url; ?>"/>
+   <Url type="text/html" template="<?php echo $html_url; ?>"/>
+   <Url type="application/rss+xml" template="<?php echo $rss_url; ?>"/>
 <?php if (isset($ico)): ?>
    <Image height="16" width="16" type="image/vnd.microsoft.icon"><?php echo "{$vars['url']}$ico"; ?></Image>
 <?php endif; ?>

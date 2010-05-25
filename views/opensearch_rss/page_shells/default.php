@@ -12,9 +12,9 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 // Set title
 $search_terms = get_input('q');
 $title = $vars['config']->sitename;
-$title .= " Search: $search_terms";
+$title .= ' ' . sprintf(elgg_echo('opensearch:title'), $search_terms);
 
-$description = "Search results for \"$search_terms\"";
+$description = sprintf(elgg_echo('opensearch:description'), $search_terms);
 
 // Remove viewtype from URL
 $search_url = str_replace('&view=opensearch_rss','', full_url());
@@ -29,10 +29,8 @@ $os_url = "{$vars['url']}pg/opensearch/osd.xml";
 	<link><?php echo $search_url; ?></link>
 	<description><?php echo $description; ?></description>
 	<opensearch:totalResults><?php echo $OPEN_SEARCH_COUNT; ?></opensearch:totalResults>
-	<opensearch:startIndex>1</opensearch:startIndex>
-	<opensearch:itemsPerPage>10</opensearch:itemsPerPage>
 	<atom:link rel="search" type="application/opensearchdescription+xml" href="<?php echo $os_url; ?>"/>
-	<opensearch:Query role="request" searchTerms="<?php echo $search_terms; ?>" startPage="1" />
+	<opensearch:Query role="request" searchTerms="<?php echo addslashes($search_terms); ?>" startPage="1" />
 <?php
 
 		echo $vars['body'];

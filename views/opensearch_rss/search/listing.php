@@ -7,7 +7,6 @@ if (!isset($OPEN_SEARCH_COUNT)) {
 
 $OPEN_SEARCH_COUNT += $vars['results']['count'];
 
-//var_dump($vars['results']);
 
 elgg_set_viewtype('rss');
 $entities = $vars['results']['entities'];

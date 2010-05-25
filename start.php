@@ -27,15 +27,6 @@ function opensearch_init() {
 function opensearch_handler($page) {
 	global $CONFIG;
 
-	// file path to the page scripts
-	$base_path = $CONFIG->pluginspath . 'opensearch';
-
-	if (!isset($page[0])) {
-		require "$base_path/search.php";
-		return TRUE;
-	}
-
-	// select page based on first URL element after /pg/hello/
 	switch ($page[0]) {
 		case 'osd.xml':
 			elgg_set_viewtype('xml');
