@@ -4,6 +4,10 @@
  * http://www.opensearch.org/Specifications/OpenSearch/1.1
  */
 
+// reset cache headers because IE8 is stupid
+header('Pragma: public', TRUE);
+header('Cache-Control: public', TRUE);
+
 $config_ini = dirname(dirname(dirname(dirname(__FILE__)))) . '/config.ini';
 $config = parse_ini_file($config_ini);
 if ($config == FALSE) {
