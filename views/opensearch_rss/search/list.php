@@ -1,4 +1,7 @@
 <?php
+/**
+ * OpenSearch serach results list
+ */
 
 global $OPEN_SEARCH_COUNT;
 if (!isset($OPEN_SEARCH_COUNT)) {

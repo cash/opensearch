@@ -1,4 +1,7 @@
 <?php
+/**
+ * Page shell for OpenSearch RSS feed
+ */
 
 global $OPEN_SEARCH_COUNT;
 
@@ -11,16 +14,15 @@ echo "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n";
 
 // Set title
 $search_terms = get_input('q');
-$title = $vars['config']->sitename;
-$title .= ' ' . sprintf(elgg_echo('opensearch:title'), $search_terms);
+$title = elgg_get_site_entity()->name;
+$title .= ' ' . elgg_echo('opensearch:title', array($search_terms));
 
-$description = sprintf(elgg_echo('opensearch:description'), $search_terms);
+$description = elgg_echo('opensearch:description', array($search_terms));
 
 // Remove viewtype from URL
-$search_url = str_replace('&view=opensearch_rss','', full_url());
+$search_url = str_replace('&view=opensearch_rss', '', full_url());
 
-$os_url = "{$vars['url']}pg/opensearch/osd.xml";
-
+$os_url = elgg_normalize_url('opensearch/osd.xml');
 
 ?>
 <rss version="2.0" xmlns:opensearch="http://a9.com/-/spec/opensearch/1.1/" xmlns:atom="http://www.w3.org/2005/Atom">

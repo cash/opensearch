@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<plugin_manifest>
-	<field key="author" value="Cash Costello" />
-	<field key="version" value="1.0" />
-	<field key="description" value="OpenSearch plugin" />
-	<field key="website" value="http://cashcostello.com/blog/" />
-	<field key="copyright" value="Cash Costello 2010" />
-	<field key="licence" value="GNU Public License version 2" />
-	<field key="elgg_version" value="2010030101" />
+<plugin_manifest xmlns="http://www.elgg.org/plugin_manifest/1.8">
+	<name>OpenSearch</name>
+	<author>Cash Costello</author>
+	<version>1.1</version>
+	<category>utility</category>
+	<category>search</category>
+	<description>OpenSearch integration</description>
+	<website>https://github.com/cash/opensearch</website>
+	<copyright>Cash Costello 2010-2011</copyright>
+	<license>GNU Public License version 2</license>
+	<requires>
+		<type>elgg_release</type>
+		<version>1.8</version>
+	</requires>
 </plugin_manifest>

@@ -5,23 +5,25 @@
  */
 
 // reset cache headers because IE8 is stupid
-header('Pragma: public', TRUE);
-header('Cache-Control: public', TRUE);
+header('Pragma: public', true);
+header('Cache-Control: public', true);
 
 $config_ini = dirname(dirname(dirname(dirname(__FILE__)))) . '/config.ini';
 $config = parse_ini_file($config_ini);
-if ($config == FALSE) {
+if ($config == false) {
 	elgg_log("Unable to parse OpenSearch config file", 'ERROR');
-	return TRUE;
+	return true;
 }
 
 extract($config);
 
-$site = get_entity($CONFIG->site_guid);
+$site = elgg_get_site_entity();
 $email = $site->email;
 
-$rss_url = "{$vars['url']}pg/search/?q={searchTerms}&amp;view=opensearch_rss";
-$html_url = "{$vars['url']}pg/search/?q={searchTerms}";
+$rss_url = elgg_normalize_url('search/?q={searchTerms}&view=opensearch_rss');
+$rss_url = elgg_format_url($rss_url);
+$html_url = elgg_normalize_url('search/?q={searchTerms}');
+$site_url = elgg_get_site_url();
 
 ?>
 <OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
@@ -34,10 +36,10 @@ $html_url = "{$vars['url']}pg/search/?q={searchTerms}";
    <Url type="text/html" template="<?php echo $html_url; ?>"/>
    <Url type="application/rss+xml" template="<?php echo $rss_url; ?>"/>
 <?php if (isset($ico)): ?>
-   <Image height="16" width="16" type="image/vnd.microsoft.icon"><?php echo "{$vars['url']}$ico"; ?></Image>
+   <Image height="16" width="16" type="image/vnd.microsoft.icon"><?php echo "{$site_url}$ico"; ?></Image>
 <?php endif; ?>
 <?php if (isset($png)): ?>
-   <Image height="64" width="64" type="image/png"><?php echo "{$vars['url']}$png"; ?></Image>
+   <Image height="64" width="64" type="image/png"><?php echo "{$site_url}$png"; ?></Image>
 <?php endif; ?>
 <?php if (isset($tags)): ?>
    <Tags><?php echo $tags; ?></Tags>
