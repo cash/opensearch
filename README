@@ -8,9 +8,8 @@ the Wikipedia page on OpenSearch at http://en.wikipedia.org/wiki/OpenSearch
 
 INSTALL
 -------------
- * Rename config.ini.sample to config.ini
- * Edit config.ini to reflect your site
  * Activate the plugin
+ * Edit OpenSearch settings in administration pages to reflect your site
 
 USAGE
 -------------
